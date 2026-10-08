@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Traffic Meter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="title">Traffic Meter</div>
+    <div class="ctrl">
+      <button id="toggle" class="start">● Start</button>
+      <button id="reset" title="Reset all totals to zero">Reset</button>
+      <button id="popout" class="icon" title="Open in a movable window">⧉</button>
+    </div>
+  </header>
+
+  <div class="sub">
+    <label>Count
+      <select id="countMode">
+        <option value="exact">Exact (stream bytes)</option>
+        <option value="headers">Headers (Content-Length)</option>
+      </select>
+    </label>
+  </div>
+
+  <form id="addForm" autocomplete="off">
+    <input id="addInput" type="text" placeholder="Add domain or IP, e.g. 4cdn.org  or  4cdn.org:8080" spellcheck="false">
+    <button type="submit">Add</button>
+  </form>
+
+  <div id="cards"></div>
+  <div id="empty" class="empty">No domains yet. Add one above, then press Start.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

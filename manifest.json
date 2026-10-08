@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Traffic Meter",
+  "version": "1.0.0",
+  "description": "Counts live and cumulative traffic for the domains/IPs you choose, filtered by port and Firefox container.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "traffic-meter@local",
+      "strict_min_version": "91.0"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "storage",
+    "contextualIdentities"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Traffic Meter",
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  }
+}
